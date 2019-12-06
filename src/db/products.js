@@ -1,6 +1,6 @@
 import mongoose from 'mongoose'
 import {cpus} from 'os'
-const productsSchem= new mongoose.Schema({
+const productsSchema= new mongoose.Schema({
     _id:String,
     name:String,
     brand:String,
@@ -9,4 +9,4 @@ const productsSchem= new mongoose.Schema({
     pictures:[String],
     ingredients:[Object]
 })
-export const productModel =mongoose.model('product',productsSchem,'products')
+export const productsModel =mongoose.model('product',productsSchema,'products')

@@ -1,7 +1,7 @@
 import mongoose from 'mongoose'
 
 const connect = () => {
-    mongoose.connect('mongodb://localhost:27017/miw_yuka', {autoReconect: true, userNewUrlParser: true})
+    mongoose.connect('mongodb://localhost:27017/miw_yuka', {useNewUrlParser: true,autoReconnect: true})
 }
 export let db
 

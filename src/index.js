@@ -5,10 +5,10 @@ export default () => {
         const app = express()
         const port = 3000
         app.listen(port,()=>{
-            console.log('un truc')
+            console.log('coucou')
+            console.log('la famille')
         })
     } catch (e) {
         console.log(e)
     }
 }
-console.log(a)

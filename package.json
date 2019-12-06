@@ -8,7 +8,7 @@
     "build": "webpack --mode=development",
     "watch": "npm run build && npm-run-all --parallel watch:server watch:build",
     "watch:build": "webpack --mode=development --watch",
-    "watch:server": "nodemon --inspect=9223 \"./dist/index.js\" --watch \"./dist\""
+    "watch:server": "nodemon --inspect=9224 \"./dist/index.js\" --watch \"./dist\""
   },
   "keywords": [],
   "author": "",
@@ -21,6 +21,8 @@
     "webpack-cli": "^3.3.10"
   },
   "dependencies": {
-    "express": "^4.17.1"
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.7.13"
   }
 }

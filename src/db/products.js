@@ -4,7 +4,7 @@ const productsSchema= new mongoose.Schema({
     _id:String,
     name:String,
     brand:String,
-    bar_code:Number,
+    bar_code:String,
     grade:Number,
     pictures:[String],
     ingredients:[Object]

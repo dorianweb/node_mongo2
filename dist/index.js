@@ -118,7 +118,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) *
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"productsModel\", function() { return productsModel; });\n/* harmony import */ var mongoose__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! mongoose */ \"mongoose\");\n/* harmony import */ var mongoose__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(mongoose__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var os__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! os */ \"os\");\n/* harmony import */ var os__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(os__WEBPACK_IMPORTED_MODULE_1__);\n\r\n\r\nconst productsSchema= new mongoose__WEBPACK_IMPORTED_MODULE_0___default.a.Schema({\r\n    _id:String,\r\n    name:String,\r\n    brand:String,\r\n    bar_code:Number,\r\n    grade:Number,\r\n    pictures:[String],\r\n    ingredients:[Object]\r\n})\r\nconst productsModel =mongoose__WEBPACK_IMPORTED_MODULE_0___default.a.model('product',productsSchema,'products')\n\n//# sourceURL=webpack:///./src/db/products.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"productsModel\", function() { return productsModel; });\n/* harmony import */ var mongoose__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! mongoose */ \"mongoose\");\n/* harmony import */ var mongoose__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(mongoose__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var os__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! os */ \"os\");\n/* harmony import */ var os__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(os__WEBPACK_IMPORTED_MODULE_1__);\n\r\n\r\nconst productsSchema= new mongoose__WEBPACK_IMPORTED_MODULE_0___default.a.Schema({\r\n    _id:String,\r\n    name:String,\r\n    brand:String,\r\n    bar_code:String,\r\n    grade:Number,\r\n    pictures:[String],\r\n    ingredients:[Object]\r\n})\r\nconst productsModel =mongoose__WEBPACK_IMPORTED_MODULE_0___default.a.model('product',productsSchema,'products')\n\n//# sourceURL=webpack:///./src/db/products.js?");
 
 /***/ }),
 
@@ -130,7 +130,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) *
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var express__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! express */ \"express\");\n/* harmony import */ var express__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(express__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _routes__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./routes */ \"./src/routes/index.js\");\n/* harmony import */ var _db__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./db */ \"./src/db/index.js\");\n\r\n\r\n\r\n/* harmony default export */ __webpack_exports__[\"default\"] = (async () => {\r\n    try {\r\n        const app = express__WEBPACK_IMPORTED_MODULE_0___default()()\r\n        await Object(_db__WEBPACK_IMPORTED_MODULE_2__[\"default\"])()\r\n        Object(_routes__WEBPACK_IMPORTED_MODULE_1__[\"default\"])(app)\r\n        app.listen(3001, () => {\r\n            console.log(3001, \"development\")\r\n        })\r\n    } catch (error) {\r\n        console.log(error)\r\n    }\r\n});\r\n\n\n//# sourceURL=webpack:///./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var express__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! express */ \"express\");\n/* harmony import */ var express__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(express__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _routes__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./routes */ \"./src/routes/index.js\");\n/* harmony import */ var _db__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./db */ \"./src/db/index.js\");\n/* harmony import */ var body_parser__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! body-parser */ \"body-parser\");\n/* harmony import */ var body_parser__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(body_parser__WEBPACK_IMPORTED_MODULE_3__);\n/* harmony import */ var cors__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! cors */ \"cors\");\n/* harmony import */ var cors__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(cors__WEBPACK_IMPORTED_MODULE_4__);\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n/* harmony default export */ __webpack_exports__[\"default\"] = (async () => {\r\n    try {\r\n        const app = express__WEBPACK_IMPORTED_MODULE_0___default()()\r\n        await Object(_db__WEBPACK_IMPORTED_MODULE_2__[\"default\"])()\r\n        app.use(body_parser__WEBPACK_IMPORTED_MODULE_3___default.a.urlencoded({extended:true}))\r\n        app.use(cors__WEBPACK_IMPORTED_MODULE_4___default()())\r\n        Object(_routes__WEBPACK_IMPORTED_MODULE_1__[\"default\"])(app)\r\n        app.listen(3001, () => {\r\n            console.log(3001, \"development\")\r\n        })\r\n    } catch (error) {\r\n        console.log(error)\r\n    }\r\n});\r\n\n\n//# sourceURL=webpack:///./src/index.js?");
 
 /***/ }),
 
@@ -143,6 +143,28 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var expr
 
 "use strict";
 eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _db_products__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../db/products */ \"./src/db/products.js\");\n\r\n\r\n/* harmony default export */ __webpack_exports__[\"default\"] = ((app) => {\r\n    app.get('/', async (req, res) => {\r\n        try {\r\n            const products = await _db_products__WEBPACK_IMPORTED_MODULE_0__[\"productsModel\"].find()\r\n            res.status(200).json(products)\r\n        } catch (error) {\r\n            console.log(error.message)\r\n            return res.status(500).json({\r\n                'error': true,\r\n                'message': 'Error requesting products'\r\n            })\r\n\r\n        }\r\n\r\n        //do something\r\n        console.log('trying to access Products data')\r\n    })\r\n\r\n    app.get('/products/:bar_code', async (req, res) => {\r\n        try {\r\n            const barCode = req.params.bar_code\r\n            const product = await _db_products__WEBPACK_IMPORTED_MODULE_0__[\"productsModel\"].findOne({bar_code: barCode})\r\n            if (product) {\r\n                res.status(200).json(product)\r\n            } else {\r\n                res.status(404).json({\r\n                    'error': true,\r\n                    'message': ` probleme with barCode ${barCode}`\r\n                })\r\n\r\n            }\r\n\r\n        } catch (error) {\r\n            console.log(error.message)\r\n            return res.status(500).json({\r\n                'error': true,\r\n                'message': `Error requesting product ${barCode}`\r\n            })\r\n\r\n        }\r\n\r\n        //do something\r\n        console.log('trying to access Products by bar code  ')\r\n    })\r\n});\n\n//# sourceURL=webpack:///./src/routes/index.js?");
+
+/***/ }),
+
+/***/ "body-parser":
+/*!******************************!*\
+  !*** external "body-parser" ***!
+  \******************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("module.exports = require(\"body-parser\");\n\n//# sourceURL=webpack:///external_%22body-parser%22?");
+
+/***/ }),
+
+/***/ "cors":
+/*!***********************!*\
+  !*** external "cors" ***!
+  \***********************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("module.exports = require(\"cors\");\n\n//# sourceURL=webpack:///external_%22cors%22?");
 
 /***/ }),
 
